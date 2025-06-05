@@ -230,6 +230,91 @@
             flex-wrap: wrap;
         }
 
+        .docs-section {
+            margin-bottom: 4rem;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .docs-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .docs-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 107, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .docs-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(78, 205, 196, 0.2);
+        }
+
+        .docs-card:hover::before {
+            opacity: 1;
+        }
+
+        .docs-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .docs-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4ecdc4, #ff6b6b);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(78, 205, 196, 0.3);
+        }
+
+        .docs-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .docs-description {
+            font-size: 1rem;
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .docs-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .product-header {
             display: flex;
             align-items: center;
@@ -407,6 +492,45 @@
             <p class="tagline">AI Tools for Curation</p>
         </header>
 
+        <section class="docs-section">
+            <h2 class="section-title">Documentation & Guides</h2>
+            <div class="docs-grid">
+                <!-- Guide 1: AI Documentation -->
+                <div class="docs-card">
+                    <div class="docs-header">
+                        <div class="docs-icon">📚</div>
+                        <h3 class="docs-title">AI Documentation</h3>
+                    </div>
+                    <p class="docs-description">
+                        Comprehensive guides for using AI tools in ontology curation workflows.
+                    </p>
+                    <div class="docs-links">
+                        <a href="https://ai4curation.github.io/aidocs/" class="btn btn-primary" target="_blank">
+                            📖 Read Docs
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Template for future docs - commented out -->
+                <!--
+                <div class="docs-card">
+                    <div class="docs-header">
+                        <div class="docs-icon">🎓</div>
+                        <h3 class="docs-title">Tutorial Title</h3>
+                    </div>
+                    <p class="docs-description">
+                        Brief description of your tutorial or guide.
+                    </p>
+                    <div class="docs-links">
+                        <a href="#" class="btn btn-primary" target="_blank">
+                            🚀 Start Tutorial
+                        </a>
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+
         <section class="products-section">
             <h2 class="section-title">Products</h2>
             <div class="products-grid">
@@ -513,6 +637,7 @@
         <footer>
             <div class="footer-links">
                 <a href="https://github.com/ai4curation">GitHub</a>
+                <a href="https://ai4curation.github.io/aidocs/">Docs</a>
             </div>
             <p class="copyright">
                 © 2025 AI4Curation
